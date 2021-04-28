@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CML South Texas</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+</head>
+<body>
+<!--NAVIGATION BAR TO TOGGLE BETWEEN TABLE IMPORT AND SITE CURVES/TABLE -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <a class="navbar-brand" href="index.html">CML EXPLORATION - SOUTH TEXAS</a>
+</nav>
+<div class="container-fluid pt-5 pb-3">
+  <!-- <div class="btn-group" role="group" aria-label="Basic example"> -->
+    <div class="btn" aria-label="Basic example">
+      <a href="index.html" class="btn btn-primary btn-md active btn-info" role="button" aria-pressed="true">Curves</a>
+      <a href="allWellProductionTable.html" class="btn btn-primary btn-md active btn-warning" role="button" aria-pressed="true">CUMs Table</a>
+  </div>
+</div>
+            <div class="container-fluid pb-3">
+              <select id="siteSelection" >
+                <option hidden value="default">Select A Well</option> 
+              </select>
+            </div>
+          </div>
+          <div id=oilDeclineCurve></div>
+          <div id=gasDeclineCurve></div>
+          <div id=waterDeclineCurve></div>
+
+</body>
+<script src="./static/curves.js"></script>
+</html>
