@@ -84,7 +84,7 @@ function updateCurves(){
         var dataGas = [{
           x: site_date,
           y: site_gas,
-        type: "line",
+        // type: "line",
         line:
           {color: "red"} }]; //close gas data
         // open gas layout
