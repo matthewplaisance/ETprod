@@ -70,11 +70,11 @@ function updateCurves(){
      }]; // close oil data
         // open oil layout
         var layoutOil = {
-          title: "Oil BBL",
-          yaxis: {
-            // type: 'log',
-            autorange: true
-          }
+          title: "Oil BBL"
+          // yaxis: {
+          //   type: 'log',
+          //   autorange: true
+          // }
         };//close oil layout
         // call oil data and layout to plot
        Plotly.newPlot("oilDeclineCurve", dataOil, layoutOil);
@@ -89,11 +89,11 @@ function updateCurves(){
           {color: "red"} }]; //close gas data
         // open gas layout
         var layoutGas = {
-          title: "Gas BBL",
-          yaxis: {
-            // type: 'log',
-            autorange: true
-          }
+          title: "Gas BBL"
+          // yaxis: {
+          //   // type: 'log',
+          //   autorange: true
+          // }
         }; //close gas layout
         //call gas data & layout to plot
         Plotly.newPlot("gasDeclineCurve", dataGas, layoutGas);
@@ -106,11 +106,11 @@ function updateCurves(){
         type: "line" }]; //close water data
         //open water layout
         var layoutWater = {
-          title: "Water BBL",
-          yaxis: {
-            // type: 'log',
-            autorange: true
-          }
+          title: "Water BBL"
+          // yaxis: {
+          //   // type: 'log',
+          //   autorange: true
+          // }
         };//close water layout
         //call water data & layout to plot
         Plotly.newPlot("waterDeclineCurve", dataWater, layoutWater);
