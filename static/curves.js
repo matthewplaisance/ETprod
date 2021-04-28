@@ -41,9 +41,9 @@ function updateCurves(){
       var site_date = [];
 
       new Promise ((resolve) => data.forEach(site => {if (site[0]===selectedOption) {
-        {if (site[2] > 1){ site_oil.push(site[2])}}
-        {if (site[3] > 1){ site_gas.push(site[3])}}
-        {if (site[4] > 1){ site_water.push(site[4])}}
+        {if (site[2]){ site_oil.push(site[2])}}
+        {if (site[3]){ site_gas.push(site[3])}}
+        {if (site[4]){ site_water.push(site[4])}}
 
         console.log(site_gas);
         console.log(site_oil);
@@ -72,7 +72,7 @@ function updateCurves(){
         var layoutOil = {
           title: "Oil BBL",
           yaxis: {
-            type: 'log',
+            // type: 'log',
             autorange: true
           }
         };//close oil layout
@@ -91,7 +91,7 @@ function updateCurves(){
         var layoutGas = {
           title: "Gas BBL",
           yaxis: {
-            type: 'log',
+            // type: 'log',
             autorange: true
           }
         }; //close gas layout
@@ -108,7 +108,7 @@ function updateCurves(){
         var layoutWater = {
           title: "Water BBL",
           yaxis: {
-            type: 'log',
+            // type: 'log',
             autorange: true
           }
         };//close water layout
