@@ -45,7 +45,10 @@ function updateCurves(){
         {if (site[3] > 1){ site_gas.push(site[3])}}
         {if (site[4] > 1){ site_water.push(site[4])}}
 
-        console.log(site_gas, site_oil, site_date, site_water);
+        console.log(site_gas);
+        console.log(site_oil);
+        console.log(site_date);
+        console.log(site_water);
         console.log(site);
           //site_oil.push(site[2]);
           //site_gas.push(site[3]);
