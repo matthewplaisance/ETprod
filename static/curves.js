@@ -44,13 +44,13 @@ function updateCurves(){
         {if (site[2] > 1){ site_oil.push(site[2])}}
         {if (site[3] > 1){ site_gas.push(site[3])}}
         {if (site[4] > 1){ site_water.push(site[4])}}
-    
 
-        console.log(site);        
+        console.log(site_gas, site_oil, site_date, site_water);
+        console.log(site);
           //site_oil.push(site[2]);
           //site_gas.push(site[3]);
           //site_water.push(site[4]);
-          site_date.push(site[1]) 
+          site_date.push(site[1])
       } resolve()}));
 
         //console.log(site_oil);
@@ -62,7 +62,7 @@ function updateCurves(){
           x: site_date,
           y: site_oil,
         type: "line",
-        line: 
+        line:
           {color: "green"}
      }]; // close oil data
         // open oil layout
@@ -74,15 +74,15 @@ function updateCurves(){
           }
         };//close oil layout
         // call oil data and layout to plot
-       Plotly.newPlot("oilDeclineCurve", dataOil, layoutOil); 
-    
+       Plotly.newPlot("oilDeclineCurve", dataOil, layoutOil);
+
         // gas decline curve data
         // open gas data
         var dataGas = [{
           x: site_date,
           y: site_gas,
         type: "line",
-        line: 
+        line:
           {color: "red"} }]; //close gas data
         // open gas layout
         var layoutGas = {
@@ -93,8 +93,8 @@ function updateCurves(){
           }
         }; //close gas layout
         //call gas data & layout to plot
-        Plotly.newPlot("gasDeclineCurve", dataGas, layoutGas); 
-    
+        Plotly.newPlot("gasDeclineCurve", dataGas, layoutGas);
+
         // water decline curve data
         //open water data
         var dataWater = [{
