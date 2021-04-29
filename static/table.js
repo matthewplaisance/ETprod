@@ -7,7 +7,7 @@ d3.json('./static/cumProd.json').then((data) => {
  tbody = d3.select("tbody")
  
  
- // CODE FOR CUM TABLE
+ // CODE FOR CUMULATIVE PRODUCTION TABLE
  // function to import the data from recent.json, saved in this folder from Jupyter Notebook
  function buildTable(tableData) {
    //clear table...is this necessary?
