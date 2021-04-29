@@ -40,20 +40,27 @@ function updateCurves(){
       var site_water = [];
       var site_date = [];
 
-      new Promise ((resolve) => data.forEach(site => {if (site[0]===selectedOption) {
-        {if (site[2]){ site_oil.push(site[2])}}
-        {if (site[3]){ site_gas.push(site[3])}}
-        {if (site[4]){ site_water.push(site[4])}}
+      // new Promise ((resolve) => data.forEach(site => {if (site[0]===selectedOption) {
+      //   {if (site[2]){ site_oil.push(site[2])}}
+      //   {if (site[3]){ site_gas.push(site[3])}}
+      //   {if (site[4]){ site_water.push(site[4])}}
 
-        console.log(site_gas);
-        console.log(site_oil);
-        console.log(site_date);
-        console.log(site_water);
-        console.log(site);
-          //site_oil.push(site[2]);
-          //site_gas.push(site[3]);
-          //site_water.push(site[4]);
-          site_date.push(site[1])
+      //   console.log(site_gas);
+      //   console.log(site_oil);
+      //   console.log(site_date);
+      //   console.log(site_water);
+      //   console.log(site);
+      //     //site_oil.push(site[2]);
+      //     //site_gas.push(site[3]);
+      //     //site_water.push(site[4]);
+      //     site_date.push(site[1])
+      // } resolve()}));
+
+      new Promise ((resolve) => data.forEach(site => {if (site[0]===selectedOption) {
+        site_oil.push(site[2]);
+        site_gas.push(site[3]);
+        site_water.push(site[4]);
+        site_date.push(site[1])
       } resolve()}));
 
         //console.log(site_oil);
