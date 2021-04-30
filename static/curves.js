@@ -16,45 +16,23 @@ function createDropdownOptions() {
   }
 
 //CALL FUNCTION TO CREATE DROPDOWN MENU VALUES
-  createDropdownOptions();
+createDropdownOptions();
 
 // LISTENER FOR CHANGE ON DROP DOWN MENU
 d3.selectAll('body').on('change', updateCurves);
 
 
-
-d3.json("./static/allProductionData.json").then((data) =>{
-    //console.log(data);
-});
-
 function updateCurves(){
     var dropdownMenu = d3.selectAll("#siteSelection").node();
     var dropdownMenuID = dropdownMenu.id;
     var selectedOption = dropdownMenu.value;
-    console.log(dropdownMenuID);
+
     console.log(selectedOption);
     d3.json("./static/allProductionData.json").then((data) =>{ //THIS WORKS!!!
-    //console.log(data);
       var site_oil = [];
       var site_gas = [];
       var site_water = [];
       var site_date = [];
-
-      // new Promise ((resolve) => data.forEach(site => {if (site[0]===selectedOption) {
-      //   {if (site[2]){ site_oil.push(site[2])}}
-      //   {if (site[3]){ site_gas.push(site[3])}}
-      //   {if (site[4]){ site_water.push(site[4])}}
-
-      //   console.log(site_gas);
-      //   console.log(site_oil);
-      //   console.log(site_date);
-      //   console.log(site_water);
-      //   console.log(site);
-      //     //site_oil.push(site[2]);
-      //     //site_gas.push(site[3]);
-      //     //site_water.push(site[4]);
-      //     site_date.push(site[1])
-      // } resolve()}));
 
       new Promise ((resolve) => data.forEach(site => {if (site[0]===selectedOption) {
         site_oil.push(site[2]);
