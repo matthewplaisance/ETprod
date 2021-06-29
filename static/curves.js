@@ -1,19 +1,20 @@
 // FUNCTON TO CREATE WELL OPTIONS DROP DOWN
 function createDropdownOptions() {
-    //select dropdown <select> in well.html with id:"siteSelection"
-    var selector = d3.select("#siteSelection");
-    //read in the wellNames.json file, which contains the array "names" with all the well names
-    d3.json('./static/well_list.json').then((data) => {
-      // console.log(data);
-    var wellOptions = data.names;
-    wellOptions.forEach((well) => {
-      selector
-        .append('option')
-        .text(well)
-        .property('Value', well);
-    })
-  })
-  }
+  var partnerSelector = d3.select("#siteSelection"); //SELECT <select> WHERE PARTNER NAMES WILL APPEAR
+  d3.json("./static/allProductionData.json").then((allData) => { //READ IN JSON FILE COINTAING ALL PARTNER'S NAMES
+    repeatedWells = [] //EMPTY ARRAY TO CONTAIN ALL PARTNER'S NAME (REPEATED)
+    allData.forEach((row) => { //LOOP THROUGH NET_INTEREST FILE
+    repeatedWells.push(row[0]) //PUSH ALL PARTNER'S NAME TO LIST 
+  });
+  wells = [...new Set(repeatedWells)].sort()
+  wells.forEach((well) => {
+    partnerSelector
+    .append('option')
+    .text(well)
+    .property('Value', well)
+  });
+});
+};
 
 //CALL FUNCTION TO CREATE DROPDOWN MENU VALUES
 createDropdownOptions();
@@ -24,7 +25,6 @@ d3.selectAll('body').on('change', updateCurves);
 
 function updateCurves(){
     var dropdownMenu = d3.selectAll("#siteSelection").node();
-    var dropdownMenuID = dropdownMenu.id;
     var selectedOption = dropdownMenu.value;
 
     console.log(selectedOption);
@@ -34,17 +34,16 @@ function updateCurves(){
       var site_water = [];
       var site_date = [];
 
-      new Promise ((resolve) => data.forEach(site => {if (site[0]===selectedOption) {
+      data.forEach((site) => {if(site[0] === selectedOption){
         site_oil.push(site[2]);
         site_gas.push(site[3]);
         site_water.push(site[4]);
-        site_date.push(site[1])
-      } resolve()}));
+        site_date.push(site[1]);
+        console.log(site[1]);
+      };
+    });
 
-        //console.log(site_oil);
-        //console.log(site_gas)
-        //console.log(site_water);
-        //console.log(site_date)
+        console.log(site_date)
 
         var dataOil = [{
           x: site_date,

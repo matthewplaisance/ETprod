@@ -32,24 +32,24 @@ d3.json('./static/cumProd.json').then((data) => {
 
    buildTable(tableData)
 
-
-//FUNCTION TO CREATE DROP DOWN VALUES
-function createDropdownOptions() {
-    //select dropdown <select> in well.html with id:"siteSelection"
-    var selector = d3.select("#siteFilter");
-    //read in the wellNames.json file, which contains the array "names" with all the well names
-    d3.json('./static/well_list.json').then((data) => {
-      // console.log(data);
-    var wellOptions = data.names;
-    wellOptions.forEach((well) => {
-      selector
-        .append('option')
-        .text(well)
-        .property('Value', well);
-    })
-  })
+  function createDropdownOptions() {
+    var partnerSelector = d3.select("#siteFilter"); //SELECT <select> WHERE PARTNER NAMES WILL APPEAR
+    d3.json("./static/allProductionData.json").then((allData) => { //READ IN JSON FILE COINTAING ALL PARTNER'S NAMES
+      repeatedWells = [] //EMPTY ARRAY TO CONTAIN ALL PARTNER'S NAME (REPEATED)
+      allData.forEach((row) => { //LOOP THROUGH NET_INTEREST FILE
+      repeatedWells.push(row[0]) //PUSH ALL PARTNER'S NAME TO LIST 
+    });
+    wells = [...new Set(repeatedWells)].sort()
+    wells.forEach((well) => {
+      partnerSelector
+      .append('option')
+      .text(well)
+      .property('Value', well)
+    });
+  });
   };
   
+  //CALL FUNCTION TO CREATE DROPDOWN MENU VALUES
   createDropdownOptions();
 
   function handleClick() {
