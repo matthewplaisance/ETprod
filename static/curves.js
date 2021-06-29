@@ -43,7 +43,7 @@ function updateCurves(){
       };
     });
 
-        console.log(site_date)
+        //console.log(site_date)
 
         var dataOil = [{
           x: site_date,
