@@ -39,10 +39,10 @@ function updateCurves(){
         site_gas.push(site[3]);
         site_water.push(site[4]);
         site_date.push(site[1]);
-        console.log(site[1]);
+        // console.log(site[1]);
       };
     });
-
+    console.log(site_oil)
         //console.log(site_date)
 
         var dataOil = [{
