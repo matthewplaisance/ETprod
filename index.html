@@ -23,22 +23,29 @@
   <a class="navbar-brand" href="index.html">CML EXPLORATION - SOUTH TEXAS</a>
 </nav>
 <div class="container-fluid pt-5 pb-3">
-  <!-- <div class="btn-group" role="group" aria-label="Basic example"> -->
-    <div class="btn" aria-label="Basic example">
-      <a href="index.html" class="btn btn-primary btn-md active btn-info" role="button" aria-pressed="true">Curves</a>
-      <a href="allWellProductionTable.html" class="btn btn-primary btn-md active btn-warning" role="button" aria-pressed="true">Cumulative Production</a>
+  <div class="btn" aria-label="Basic example">
+    <a href="index.html" class="btn btn-primary btn-md active btn-info" role="button" aria-pressed="true">Curves</a>
+    <a href="allWellProductionTable.html" class="btn btn-primary btn-md active btn-warning" role="button" aria-pressed="true">Cumulative Production</a>
   </div>
 </div>
-            <div class="container-fluid pb-3">
-              <select id="siteSelection" >
-                <option hidden value="default">Select A Well</option>
-              </select>
-            </div>
-          </div>
-          <div id=oilDeclineCurve></div>
-          <div id=gasDeclineCurve></div>
-          <div id=waterDeclineCurve></div>
+<div class="container-fluid pb-3">
+  <div class="row">
+    <div class="col-md-1">
+      <select id="siteSelection" >
+        <option hidden value="default">Select A Well</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <button id="linear" type="button" class="btn btn-info active" aria-pressed="true">Linear</button>
+      <button id="logarithmic" type="button" class="btn btn-info">Logarithmic</button>
+    </div>
 
+  </div>
+</div>
+</div>
+<div id=oilDeclineCurve></div>
+<div id=gasDeclineCurve></div>
+<div id=waterDeclineCurve></div>
 </body>
 <script src="./static/curves.js"></script>
 </html>
