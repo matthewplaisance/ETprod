@@ -39,18 +39,24 @@ function LinearCurves(){
     var site_gas = [];
     var site_water = [];
     var site_date = [];
+    var comments = [];
 
     data.forEach((site) => {if(site[0] === selectedOption){
       site_oil.push(site[2]);
       site_gas.push(site[3]);
       site_water.push(site[4]);
       site_date.push(site[1]);
+      comments.push(site[7])
     };
   });
   
+  
+ 
+
   var dataOil = [{
     x: site_date,
     y: site_oil,
+    text: comments,
     line:
     {color: "green"}
   }];
@@ -62,6 +68,7 @@ function LinearCurves(){
   var dataGas = [{
     x: site_date,
     y: site_gas,
+    text: comments,
     line:
     {color: "red"}
   }];
@@ -73,6 +80,7 @@ function LinearCurves(){
   var dataWater = [{
     x: site_date,
     y: site_water,
+    text: comments,
     type: "line"
   }];
   var layoutWater = {
@@ -103,13 +111,14 @@ function LogCurves(){
       site_gas.push(site[3]);
       site_water.push(site[4]);
       site_date.push(site[1]);
-      //console.log(site[1]);
+      comments.push(site[7])
     };
   });
   
   var dataOil = [{
     x: site_date,
     y: site_oil,
+    text: comments,
     type: "line",
     line:
     {color: "green"}
@@ -128,6 +137,7 @@ function LogCurves(){
   var dataGas = [{
     x: site_date,
     y: site_gas,
+    text: comments,
     type: "line",
     line:
     {color: "red"}
@@ -146,6 +156,7 @@ function LogCurves(){
   var dataWater = [{
     x: site_date,
     y: site_water,
+    text: comments,
     type: "line" }];
     
   var layoutWater = {
