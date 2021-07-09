@@ -1,0 +1,11 @@
+body {
+    text-align: center;
+}
+
+#password {
+    display: inline-block;
+    padding-top: 20%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
