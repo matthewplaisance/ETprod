@@ -11,8 +11,10 @@ async function sha256(message) {
       .join('');
     console.log(hashHex);
     return hashHex;
-  }
-  var userinput = window.prompt('Enter your name: ');
+  };
+
+
+  var userinput = window.prompt('Enter your password: ');
   var hp = sha256(userinput);
   if (hp === '737f59eac62477359fc3819b35fd5ccc71b60320a332a28073d01eecfb8f2e90') {
     console.log('Nice');
