@@ -14,10 +14,31 @@ async function sha256(message) {
   };
 
 
-  var userinput = window.prompt('Enter your password: ');
-  var hp = sha256(userinput);
+
+  async function getEntered(userInput){
+  var userInput = document.getElementById("userPassword").value;
+  //var hp = document.getElementById("userPassword").value;
+  console.log(userInput);
+
+  var hp = await sha256(userInput);
+  console.log(hp);
+
   if (hp === '737f59eac62477359fc3819b35fd5ccc71b60320a332a28073d01eecfb8f2e90') {
-    console.log('Nice');
+    window.location.replace("http://127.0.0.1:5501/curves.html");
+    console.log("yes")
+    
   } else {
-    console.log('Try Again');
-  }
+    window.location.replace("http://127.0.0.1:5501/index.html");
+    alert("WRONG! Try Again.");
+    console.log("no")
+  };
+};
+
+
+
+document.getElementById("enter").addEventListener("click", getEntered);
+
+
+
+
+
