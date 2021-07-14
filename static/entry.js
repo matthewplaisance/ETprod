@@ -24,11 +24,11 @@ async function sha256(message) {
   console.log(hp);
 
   if (hp === '737f59eac62477359fc3819b35fd5ccc71b60320a332a28073d01eecfb8f2e90') {
-    window.location.replace("https://cmlexploration.github.io/STprod/curves.html");
+    window.location.replace("https://cmlexploration.github.io/ETprod/curves.html");
     console.log("yes")
     
   } else {
-    window.location.replace("https://cmlexploration.github.io/STprod/index.html");
+    window.location.replace("https://cmlexploration.github.io/ETprod/index.html");
     alert("WRONG! Try Again.");
     console.log("no")
   };
