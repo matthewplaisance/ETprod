@@ -117,7 +117,7 @@ function LogCurves(){
   }];
   
   var layoutOil = {
-    title: "Oil BBL",
+    title: "Oil (BOPD) vs Time",
     yaxis: {
       type: 'log',
       autorange: true
@@ -136,7 +136,7 @@ function LogCurves(){
   }];
   
   var layoutGas = {
-    title: "Gas BBL",
+    title: "Gas (MCFD) vs Time",
     yaxis: {
       type: 'log',
       autorange: true
@@ -152,7 +152,7 @@ function LogCurves(){
     type: "line" }];
     
   var layoutWater = {
-    title: "Water BBL",
+    title: "Water (BWPD) vs Time",
     yaxis: {
       type: 'log',
       autorange: true
@@ -205,7 +205,7 @@ function CurveLinear30Days(){
   }];
   
   var layoutOil = {
-    title: "Oil BBL"
+    title: "Oil (BOPD) vs Time"
   };
   
   Plotly.newPlot("oilDeclineCurve", dataOil, layoutOil, {displayModeBar: true});
@@ -220,7 +220,7 @@ function CurveLinear30Days(){
   }];
   
   var layoutGas = {
-    title: "Gas BBL"
+    title: "Gas (MCFD) vs Time"
   };
   
   Plotly.newPlot("gasDeclineCurve", dataGas, layoutGas);
@@ -232,7 +232,7 @@ function CurveLinear30Days(){
     type: "line" }];
     
   var layoutWater = {
-    title: "Water BBL"
+    title: "Water (BWPD) vs Time"
   };
   
   Plotly.newPlot("waterDeclineCurve", dataWater, layoutWater);
@@ -277,7 +277,7 @@ function CurveLinear180Days(){
   }];
   
   var layoutOil = {
-    title: "Oil BBL"
+    title: "Oil (BOPD) vs Time"
   };
   
   Plotly.newPlot("oilDeclineCurve", dataOil, layoutOil, {displayModeBar: true});
@@ -292,7 +292,7 @@ function CurveLinear180Days(){
   }];
   
   var layoutGas = {
-    title: "Gas BBL"
+    title: "Gas (MCFD) vs Time"
   };
   
   Plotly.newPlot("gasDeclineCurve", dataGas, layoutGas);
@@ -304,7 +304,7 @@ function CurveLinear180Days(){
     type: "line" }];
     
   var layoutWater = {
-    title: "Water BBL"
+    title: "Water (BWPD) vs Time"
   };
   
   Plotly.newPlot("waterDeclineCurve", dataWater, layoutWater);
@@ -349,7 +349,7 @@ function CurveLinear365Days(){
   }];
   
   var layoutOil = {
-    title: "Oil BBL"
+    title: "Oil (BOPD) vs Time"
   };
   
   Plotly.newPlot("oilDeclineCurve", dataOil, layoutOil, {displayModeBar: true});
@@ -364,7 +364,7 @@ function CurveLinear365Days(){
   }];
   
   var layoutGas = {
-    title: "Gas BBL"
+    title: "Gas (MCFD) vs Time"
   };
   
   Plotly.newPlot("gasDeclineCurve", dataGas, layoutGas);
@@ -376,7 +376,7 @@ function CurveLinear365Days(){
     type: "line" }];
     
   var layoutWater = {
-    title: "Water BBL"
+    title: "Water (BWPD) vs Time"
   };
   
   Plotly.newPlot("waterDeclineCurve", dataWater, layoutWater);
@@ -418,7 +418,7 @@ function Log30DayCurves(){
   }];
   
   var layoutOil = {
-    title: "Oil BBL",
+    title: "Oil (BOPD) vs Time",
     yaxis: {
       type: 'log',
       autorange: true
@@ -437,7 +437,7 @@ function Log30DayCurves(){
   }];
   
   var layoutGas = {
-    title: "Gas BBL",
+    title: "Gas (MCFD) vs Time",
     yaxis: {
       type: 'log',
       autorange: true
@@ -453,7 +453,7 @@ function Log30DayCurves(){
     type: "line" }];
     
   var layoutWater = {
-    title: "Water BBL",
+    title: "Water (BWPD) vs Time",
     yaxis: {
       type: 'log',
       autorange: true
@@ -503,7 +503,7 @@ function Log180DayCurves(){
   }];
   
   var layoutOil = {
-    title: "Oil BBL",
+    title: "Oil (BOPD) vs Time",
     yaxis: {
       type: 'log',
       autorange: true
@@ -522,7 +522,7 @@ function Log180DayCurves(){
   }];
   
   var layoutGas = {
-    title: "Gas BBL",
+    title: "Gas (MCFD) vs Time",
     yaxis: {
       type: 'log',
       autorange: true
@@ -538,7 +538,7 @@ function Log180DayCurves(){
     type: "line" }];
     
   var layoutWater = {
-    title: "Water BBL",
+    title: "Water (BWPD) vs Time",
     yaxis: {
       type: 'log',
       autorange: true
@@ -588,7 +588,7 @@ function Log365DayCurves(){
   }];
   
   var layoutOil = {
-    title: "Oil BBL",
+    title: "Oil (BOPD) vs Time",
     yaxis: {
       type: 'log',
       autorange: true
@@ -607,7 +607,7 @@ function Log365DayCurves(){
   }];
   
   var layoutGas = {
-    title: "Gas BBL",
+    title: "Gas (MCFD) vs Time",
     yaxis: {
       type: 'log',
       autorange: true
@@ -623,7 +623,7 @@ function Log365DayCurves(){
     type: "line" }];
     
   var layoutWater = {
-    title: "Water BBL",
+    title: "Water (BWPD) vs Time",
     yaxis: {
       type: 'log',
       autorange: true
