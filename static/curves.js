@@ -50,7 +50,7 @@ function LinearCurves(){
     {color: "green"}
   }];
   var layoutOil = {
-    title: "Oil BBL"
+    title: "Oil (BOPD) vs Time"
   };
   Plotly.newPlot("oilDeclineCurve", dataOil, layoutOil, {displayModeBar: true}, {responsive: true});
   
@@ -62,7 +62,7 @@ function LinearCurves(){
     {color: "red"}
   }];
   var layoutGas = {
-    title: "Gas BBL"
+    title: "Gas (MCFD) vs Time"
   };
   Plotly.newPlot("gasDeclineCurve", dataGas, layoutGas);
   
@@ -73,7 +73,7 @@ function LinearCurves(){
     type: "line"
   }];
   var layoutWater = {
-    title: "Water BBL"
+    title: "Water (BOPD) vs Time"
   };
   Plotly.newPlot("waterDeclineCurve", dataWater, layoutWater);
 
