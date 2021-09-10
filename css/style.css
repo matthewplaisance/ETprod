@@ -1,11 +1,6 @@
-body {
-    text-align: center;
+#individualTable td:nth-child(1) {
+    font-weight: 600;
 }
 
-#entry {
-    display: inline-block;
-    padding-top: 20%;
-    font-family: Georgia, 'Times New Roman', Times, serif;
 
-}
 
