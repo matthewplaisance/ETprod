@@ -16,6 +16,8 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
+
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 <!--NAVIGATION BAR TO TOGGLE BETWEEN TABLE IMPORT AND SITE CURVES/TABLE -->
@@ -24,8 +26,8 @@
 </nav>
 <div class="container-fluid pt-5 pb-3">
   <div class="btn" aria-label="Basic example">
-    <a href="curves.html" class="btn btn-primary btn-md active btn-info" role="button" aria-pressed="true">Curves</a>
-    <a href="allWellProductionTable.html" class="btn btn-primary btn-md active btn-warning" role="button" aria-pressed="true">Cumulative Production</a>
+    <a href="curves.html" class="btn btn-md active btn-info" role="button" aria-pressed="true">Curves</a>
+    <a href="allWellProductionTable.html" class="btn btn-primary btn-md btn-info" role="button" aria-pressed="true">Cumulative Production</a>
   </div>
 </div>
 <div class="container-fluid pb-3">
@@ -37,9 +39,10 @@
     </div>
     <div class="col-md-2">
       <button id="linear" type="button" class="btn btn-info active" aria-pressed="true">Linear</button>
-      <button id="logarithmic" type="button" class="btn btn-info">Logarithmic</button>
+      <button id="logarithmic" type="button" class="btn btn-outline-info">Logarithmic</button>
+      <button id="table" type="button" class="btn btn-danger">Table</button>
     </div>
-    <div class="col-md-5">
+    <div class="col-md-4">
       <div class="col text-center">
         <div id="timeframes" class="btn-group" role="group" aria-label="Basic mixed styles example">
           <button id="Inception" type="button" class="btn btn-info active">Inception</button>
@@ -49,25 +52,61 @@
         </div>
       </div>
     </div>
-    <div class="col-md-11">
+    <div class="col-md-12">
       <div class="col text-center">
         <div id="timeframesLog" class="btn-group" role="group" aria-label="Basic mixed styles example" style="display: none;">
-          <button id="InceptionLog" type="button" class="btn btn-info active">Inception</button>
-          <button id="Days360Log" type="button" class="btn btn-info">360 Days</button>
-          <button id="Days180Log" type="button" class="btn btn-info">180 Days</button>
-          <button id="Days30Log" type="button" class="btn btn-info">30 Days</button>
+          <button id="InceptionLog" type="button" class="btn btn-outline-info">Inception</button>
+          <button id="Days365Log" type="button" class="btn btn-outline-info">365 Days</button>
+          <button id="Days180Log" type="button" class="btn btn-outline-info">180 Days</button>
+          <button id="Days30Log" type="button" class="btn btn-outline-info">30 Days</button>
         </div>
       </div>
     </div>
   </div>
 </div>
-<div id=oilDeclineCurve></div>
-<div id=gasDeclineCurve></div>
-<div id=waterDeclineCurve></div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2"></div>
+  <div id="individualTable" class="col-md-7" style="display: none;">
+    <h2>Production</h2>
+    <table class="table table-sm table-striped table-bordered table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <!-- <th>Well Name</th> -->
+          <th style="width:17%">Date</th>
+          <th>Oil (BBLS)</th>
+          <th>Gas (MMCF)</th>
+          <th>Water (BBLS)</th>
+          <th>TP</th>
+          <th>CP</th>
+          <th>Comments</th>
+          <!-- <th>Moving Average</th> -->
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+
+
+  </div>
+  
+</div>
+
+  <div id="curves" class="container-fluid" style="display: inline-block;">
+    <div class="col-md-12">
+    <div id=oilDeclineCurve></div>
+    <div id=gasDeclineCurve></div>
+    <div id=waterDeclineCurve></div>
+  </div>
+  </div>
+
+<!-- TABULAR DATA HIDDEN UNTIL "table" BUTTON IS CLICKED  style="display: none;"  -->
+
+
+
+
 </body>
 <script src="./static/curves.js"></script>
 </html>
-
-
-
-
