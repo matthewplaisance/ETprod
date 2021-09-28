@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Well Production Table</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <script src="https://d3js.org/d3.v5.min.js"></script> 
+</head>
+<body>
+<!--NAVIGATION BAR -->
+<nav class="navbar navbar-expand-lg fixed-top">
+    <a class="navbar-brand" href="index.html">CML EXPLORATION - EAST TEXAS </a>
+</nav>
+<div class="container-fluid pt-5 pb-3">
+    <div class="btn" aria-label="Basic example">
+        <a href="curves.html" class="btn btn-primary btn-md btn-info" role="button" aria-pressed="true">Curves</a>
+        <a href="allWellProductionTable.html" class="btn btn-primary btn-md btn-warning" role="button" aria-pressed="true">Cumulative Production</a>
+        <a href="yesterdaysProd.html" class="btn btn-primary btn-md btn-dark" role="button" aria-pressed="true">Most Recent Production</a>
+    </div>
+</div>
+<!--CUM TABLE HERE-->
+<div class="container-fluid"> 
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-6">
+            <h2 id="todaysDate"></h2>
+        <table class="table table-sm table-striped table-bordered table-hover">
+            <!-- table-dark -->
+          <thead class="thead-dark">
+          <tr>
+            <!-- <th style="width:17%">Date</th> -->
+            <th style="width:15%">Well Name</th>
+            <th style="width:5%">Oil</th>
+            <th style="width:5%">Gas</th>
+            <th style="width:5%">Water</th>
+            <th style="width:5%">TP</th>
+            <th style=width:65%>Comments</th>
+            <!-- <th>EPT</th>
+            <th>Est bfpd</th>
+            <th>Pump Eff</th>
+            <th>Pump Depth</th>
+            <th>GFLAP</th>
+            <th style="width:17%">Inc</th> -->
+          </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+<div class="col-md-2">
+    <div class="container-fluid" id="filters">
+        <form>
+            <h5>Filter Data Here</h5>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <select id='wellFilter'>
+                        <option hidden value="default">Select A Well</option> 
+                    </select>
+                </li>
+                <button id="clear-filter-btn" type="button" class="btn btn-info">Clear Filter</button>
+            </ul>
+        </form>
+    </div> 
+</div>
+<script src="static/yesterdaysProd.js"></script>
+</body>
+</html>

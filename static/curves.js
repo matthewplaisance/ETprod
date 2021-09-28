@@ -28,15 +28,10 @@ function Curve(d,t){
 
   dropdownMenu = d3.select("#siteSelection").node();
   selectedOption = dropdownMenu.value;
-  
+
   console.log(selectedOption);
   
   d3.json("./static/allProductionData.json").then((data) =>{ 
-    
-    console.log(typeof data[0][1]);
-    console.log(data[0][1]);
-
-
     var site_oil = [];
     var site_gas = [];
     var site_water = [];
@@ -53,7 +48,7 @@ function Curve(d,t){
       movingAverage.push(site[8])
     };
   });
-  console.log(typeof site_date[0]);
+  
   if (d > 0){
     var site_date = site_date.slice(0,d);
     var site_oil = site_oil.slice(0,d);
@@ -76,7 +71,7 @@ function Curve(d,t){
     x: site_date,
     y: movingAverage,
     type: "line",
-    name: "7D MA",
+    name: "7 Day Moving Average",
     line:
     {dash: "dot"}
   }; 
@@ -170,11 +165,6 @@ function Curve(d,t){
     
   }
 })
-
-////// TABLE TO LOG OR TABLE TO LINEAR CAUSES ISSUES // 
-
-    
-
 };
 
 function table() {
@@ -213,6 +203,11 @@ function table() {
 };
 
 
+
+
+
+
+
 //LINEAR LISTENERS//
 d3.select("#linear").on('click', function() {Curve(d=0,t='linear');});
 d3.select("#Inception").on('click', function() {Curve(d=0,t='linear');});
@@ -229,4 +224,6 @@ d3.select("#Days365Log").on('click', function() {Curve(d=366,t='log');});
 
 //TABLE LISTENERS //
 d3.select("#table").on('click', function() {table()});
+
+
 
