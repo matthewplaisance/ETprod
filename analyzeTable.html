@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Well Production Table</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- FAVICON CODE -->
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon_package/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon_package/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon_package/favicon-16x16.png">
+    <link rel="manifest" href="static/favicon_package/site.webmanifest">
+    <link rel="mask-icon" href="static/favicon_package/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+<!--NAVIGATION BAR -->
+<nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="index.html">CML EXPLORATION - EAST TEXAS </a>
+</nav>
+<div class="container-fluid pb-3 pl-1">
+    <div class="btn" aria-label="Basic example">
+        <a href="curves.html" class="btn btn-md btn-info" role="button">Curves</a>
+        <a href="allWellProductionTable.html" class="btn btn-md btn-warning" role="button" aria-pressed="true">Cumulative Production</a>
+        <a href="yesterdaysProd.html" class="btn btn-md btn-dark" role="button" aria-pressed="true">Most Recent Production</a>
+        <a href="analyzeTable.html" class="btn btn-md btn-secondary active" role="button" aria-pressed="true">Analyze</a>
+    </div>
+</div>
+<!--CUM TABLE HERE-->
+<div class="container-fluid"> 
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <h2>Analyze</h2>
+        <table class="table table-sm table-striped table-bordered table-hover">
+            <!-- table-dark -->
+            <thead class="thead-dark">
+          <tr>
+            <th style="width:15%">Well Name</th>
+            <th>Date</th>
+            <th>Oil (MBBLS)</th>
+            <th>Gas (MMCF)</th>
+            <th>Water (MBBLS)</th>
+            <th>TP</th>
+            <th>CP</th>
+            <th>Comments</th>
+            <th>7DMA</th>
+            <th>30DMA</th>
+            <th>MA_ratio</th>
+
+          </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+<div class="col-md-2">
+    
+</div>
+<script src="static/analyzeTable.js"></script>
+</body>
+</html>
