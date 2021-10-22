@@ -133,6 +133,8 @@ function Curve(d,t){
 
   Plotly.newPlot("waterDeclineCurve", dataWater, layoutWater, config);
 
+  document.getElementById("siteSelection").focus();
+
   if(d===0 && t==='log'){
 
     var showCurves = document.getElementById("curves"); // CURVES IS INITIALLY DISPLAYED AS LINEAR? 
@@ -161,10 +163,25 @@ function Curve(d,t){
 
     var hidetable = document.getElementById("individualTable");
     hidetable.style.display = "none";
-    
-    
   }
+  
 })
+
+d3.json("./static/cumProd.json").then((cumData) => {
+  var selectedWellCum = 0;
+  var selectedWellGasCum = 0;
+  cumData.forEach(wellCum=> {
+    if(selectedOption ===  wellCum[0]){
+      selectedWellCum = wellCum[1];
+      selectedWellGasCum = wellCum[3]
+      console.log(selectedWellCum)
+
+    }
+  })
+  document.getElementById("cumCurve").innerHTML = "Cum: "+ selectedWellCum + " MBBLS, " + selectedWellGasCum + " MMCF";
+  //console.log(selectedWellGasCum)
+})
+
 };
 
 function table() {
