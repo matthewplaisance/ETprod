@@ -1,144 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CML East Texas</title>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="https://d3js.org/d3.v5.min.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CML East Texas</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/style.css">
 
-    <!-- FAVICON CODE -->
-    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon_package/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon_package/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon_package/favicon-16x16.png">
-    <link rel="manifest" href="static/favicon_package/site.webmanifest">
-    <link rel="mask-icon" href="static/favicon_package/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
+
+  <!-- FAVICON CODE -->
+  <link rel="apple-touch-icon" sizes="180x180" href="static/favicon_package/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="static/favicon_package/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="static/favicon_package/favicon-16x16.png">
+  <link rel="manifest" href="static/favicon_package/site.webmanifest">
+  <link rel="mask-icon" href="static/favicon_package/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
 </head>
-<body>
-<!--NAVIGATION BAR TO TOGGLE BETWEEN TABLE IMPORT AND SITE CURVES/TABLE -->
-<nav class="navbar navbar-expand-lg">
-  <a class="navbar-brand" href="index.html">CML EXPLORATION - EAST TEXAS</a>
-</nav>
-<div class="container-fluid pb-3 pl-1">
-    <div class="btn" aria-label="Basic example">
-        <a href="curves.html" class="btn btn-md btn-info active" role="button">Curves</a>
-        <a href="allWellProductionTable.html" class="btn btn-md btn-warning" role="button" aria-pressed="true">Cumulative Production</a>
-        <a href="yesterdaysProd.html" class="btn btn-md btn-dark" role="button" aria-pressed="true">Most Recent Production</a>
-        <a href="analyzeTable.html" class="btn btn-md btn-secondary" role="button" aria-pressed="true">Analyze</a>
-    </div>
-  </div>
-</div>
-<div class="container-fluid pb-3">
-  <div class="row">
-    <div class="col-md-2">
-      <select id="siteSelection" >
-        <option hidden value="default">Select A Well</option>
-      </select>
-    </div>
-    <div class="col-md-2">
-      <button id="linear" type="button" class="btn btn-info active" aria-pressed="true">Linear</button>
-      <button id="logarithmic" type="button" class="btn btn-outline-info">Logarithmic</button>
-      <button id="table" type="button" class="btn btn-danger">Table</button>
-    </div>
-    <div id="timeframes" class="col-md-5">
-      <button id="Inception" type="button" class="btn btn-info active">Inception</button>
-      <button id="Days365" type="button" class="btn btn-info">365 Days</button>
-      <button id="Days180" type="button" class="btn btn-info">180 Days</button>
-      <button id="Days30" type="button" class="btn btn-info">30 Days</button>
-    </div>
-    <div id="timeframesLog" class="col-md-5" style="display: none;">
-      <button id="InceptionLog" type="button" class="btn btn-outline-info">Inception</button>
-      <button id="Days365Log" type="button" class="btn btn-outline-info">365 Days</button>
-      <button id="Days180Log" type="button" class="btn btn-outline-info">180 Days</button>
-      <button id="Days30Log" type="button" class="btn btn-outline-info">30 Days</button>
-    </div>
-  </div>
-</div>
 
-<div class="container-fluid">
-  <div class="row">
-    <!-- WELL NAME -->
-    <div class="col-md-2"><h2 id="wellName"></h2></div>
+<body>
+  <!--NAVIGATION BAR TO TOGGLE BETWEEN TABLE IMPORT AND SITE CURVES/TABLE -->
+  <nav id="navbar1" class="navbar navbar-expand-xl navbar-dark">
+    <a class="navbar-brand" ><span>CML EXPLORATION - EAST TEXAS</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
     
-    <!-- PRICE OF OIL API -->
-    <div class="col-md-4 text-left"><h2 id="WTIOIL"></h2></div>
-    
-    <div class="col-md-12">
-      <h5 id="cumCurve"></h5>
-      <div id="pumpInfo" class="col text-center" style="display: none;">
-        <button type="button" id="c" class="btn btn-secondary"></button>
-        <button type="button" id="SPM" class="btn btn-secondary"></button>
-        <button type="button" id="DHSL" class="btn btn-secondary"></button>
-        <button type="button" id="ideal" class="btn btn-secondary"></button>
-        <button type="button" id="pumpEff" class="btn btn-secondary"></button>
-        <button type="button" id="pumpDepth" class="btn btn-dark"></button>
-        <button type="button" id="GFLAP" class="btn btn-dark"></button>
-        <button type="button" id="Inc" class="btn btn-dark"></button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active" >
+          <a id="graphpage" class="nav-link" href="curves.html">Graph</a>
+        </li>
+        <li class="nav-item" style="padding-left:30px">
+          <a id="pages" class="nav-link" href="allWellProductionTable.html">Cumulative Production</a>
+        </li>
+        <li class="nav-item" style="padding-left:30px">
+          <a id="pages" class="nav-link" href="yesterdaysProd.html">Most Recent Production</a>
+        </li>
+        <li class="nav-item" style="padding-left:30px">
+          <a id="pages" class="nav-link" href="analyzeTable.html">Analyze</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div id="curveOptions" class="container-fluid">
+    <div class="row">
+      <div id="filler0">
+        <a hidden></a>
+      </div>
+      <div class="col-md-2">
+        <select id="siteSelection" class="active">
+          <option hidden value="default">Select A Well</option>
+        </select>
+      </div>
+      <div id="view" class="col-md-4">
+        <a id="linear" class="active" style="text-decoration:none">Linear</a>
+        <a id="logarithmic" style="text-decoration:none">Logarithmic</a>
+        <a id="table" style="text-decoration:none">Table</a>
+      </div>
+      <div id="timeframes" class="col-md-6">
+        <a id="DaysInception" class="active" style="text-decoration:none">Inception</a>
+        <a id="Days365" style="text-decoration:none">365 Days</a>
+        <a id="Days180" style="text-decoration:none">180 Days</a>
+        <a id="Days30" style="text-decoration:none">30 Days</a>
       </div>
     </div>
-    <div class="col-md-12">
-      <div id="notPumpingInfo" class="col text-center" style="display: none;">
-        <button type="button" id="notPumping" class="btn btn-secondary"></button>
+  </div>
+  <div id="filler">
+    <a hidden></a>
+  </div>
+  <div id="filler2">
+    <a hidden></a>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <h5 id="wellName"></h5>
+      </div>
+    </div>
+    <div id="detailedData" class="row">
+      <div class="col-md-3" id="formCum">
+        <h5 id="formation"></h5>
+        <div id="filler4">
+          <a hidden></a>
+        </div>
+        <h5 id="cumlativeData">
+          <h5 id="waterTotal"></h5>
+        </h5>
+      </div>
+      <div id="zoomOilTitle" class="col-md-9">
+        <h6 id="zoomOil"></h6>
       </div>
     </div>
   </div>
   
   <div class="row">
     <div class="col-md-2"></div>
-  <div id="individualTable" class="col-md-7" style="display: none;">
-    <h2>Production</h2>
-    <table class="table table-sm table-striped table-bordered table-hover">
-      <thead class="thead-dark">
-        <tr>
-          <!-- <th>Well Name</th> -->
-          <th style="width:17%">Date</th>
-          <th>Oil (BBLS)</th>
-          <th>Gas (MMCF)</th>
-          <th>Water (BBLS)</th>
-          <th>TP</th>
-          <th>CP</th>
-          <th>Comments</th>
-          <!-- <th>Moving Average</th> -->
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
+    <div id="individualTable" class="col-md-7">
+      <h2>Production</h2>
+      <table class="table table-sm table-striped table-bordered table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th>Date</th>
+            <th>Oil (BBLS)</th>
+            <th>Gas (MMCF)</th>
+            <th>Water (BBLS)</th>
+            <th>TP</th>
+            <th>CP</th>
+            <th>Comments</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
   </div>
 
-
-
-  </div>
-  
-</div>
-
-  <div id="curves" class="container-fluid" style="display: inline-block;">
+  <div id="curves" class="container-fluid">
     <div class="col-md-12">
-    <div id=oilDeclineCurve></div>
-    <div id=gasDeclineCurve></div>
-    <div id=waterDeclineCurve></div>
+      <div id=oilDeclineCurve></div>
+      <div id=gasDeclineCurve></div>
+      <div id=waterDeclineCurve></div>
+      <div id=waterCutCurve></div>
+    </div>
   </div>
-  </div>
-
-<!-- TABULAR DATA HIDDEN UNTIL "table" BUTTON IS CLICKED  style="display: none;"  -->
-
-
-
-
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script type='text/javascript' src='config.js'></script>
-<script src="./static/curves.js"></script>
+<script src="./static/graph.js"></script>
+
 </html>

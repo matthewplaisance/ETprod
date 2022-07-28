@@ -1,6 +1,306 @@
 #individualTable td:nth-child(1) {
     font-weight: 600;
 }
+html,
+body {
+  height: 100%;
+}
 
+#individualTable td:nth-child(1) {
+  font-weight: 600;
+}
+
+#individualTable th:nth-child(1) {
+  width: 17%;
+}
+
+#individualTable {
+  display: none;
+}
+
+#notPumpingInfo {
+  display: none;
+}
+
+#analyzeTable th:nth-child(1) {
+  width: 15%;
+}
+
+#pumpInfo {
+  padding-top: 15px;
+}
+
+#pnlTitle {
+  text-align: right;
+}
+
+#waterTotal {
+  text-align: match-parent;
+}
+#wellselect {
+  margin-top: 1%;
+  border-radius: 15px;
+  margin-left: 1%;
+}
+#Prodfilter {
+  margin-top: 1%;
+  margin-bottom: 1%;
+  padding: 1% 3%;
+  font-size: 95%;
+  background-color: whitesmoke;
+  border-color: black;
+  color: black;
+  transition-duration: 0.4s;
+}
+#clearFilter {
+  padding: 1% 3%;
+  font-size: 95%;
+  background-color: whitesmoke;
+  border-color: black;
+  color: black;
+  transition-duration: 0.4s;
+}
+#Prodfilter:hover {
+  background-color: gray;
+  color: white;
+}
+
+#clearFilter:hover {
+  background-color: gray;
+  color: white;
+}
+.curve {
+  position: absolute;
+  top: 51%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+
+#navbar1 {
+  background-color: #1c4662;
+  margin-bottom: 0px;
+}
+.navbar-brand {
+  margin-left: 0.5%;
+}
+#graphpage {
+  margin-left: 1%;
+  color: whitesmoke;
+  border: none;
+}
+
+#graphpage:hover {
+  color: #e07719;
+}
+
+#pages {
+  margin-left: 1%;
+  color: whitesmoke;
+  border: none;
+}
+
+#pages:hover {
+  color: #e07719;
+}
+#curveOptions {
+  background-color: whitesmoke;
+  border-color: rgb(61, 61, 61);
+}
+#siteSelection {
+  margin-left: 0.5%;
+  margin-top: 4.5%;
+  border-radius: 15px;
+  background-color: whitesmoke;
+}
+
+#siteSelection,#view > a,#timeframes > a{
+  margin-top: 10px;
+}
+#view{
+  padding-left: 16.28%;
+}
+#timeframes{
+  padding-left: 1.2%;
+}
+
+#view > a,#timeframes > a {
+  display: inline-block;
+  margin-left: 10px;
+  border: none;
+  color: black;
+}
+
+#view > a.active,#timeframes > a.active {
+  border-bottom: 2px solid black;
+}
+
+#view > a:hover,#timeframes > a:hover {
+  cursor: pointer;
+  color: #e07719;
+  border-bottom: 2px solid black;
+}
+
+#cumlativeProd {
+  margin-top: 1%;
+}
+
+#analyzeTableTot {
+  margin-top: 1%;
+}
+
+#RecentProd {
+  margin-top: 1%;
+}
+#filler {
+  height: 1%;
+  background-color: whitesmoke;
+  border-color: rgb(61, 61, 61);
+}
+select {
+  text-align-last: center;
+}
+
+#view > button {
+  border-color: none;
+  border: none;
+  border-radius: 10px;
+}
+#filler2 {
+  height: 1%;
+  background-color: white;
+}
+li {
+  white-space: nowrap;
+}
+#zoomOilTitle{
+    padding-left: 810px;
+}
+
+@media (min-width: 768px) {
+  .navbar-nav {
+    float: none;
+    vertical-align: top;
+    margin-left: 18%;
+  }
+  .navbar-nav > li {
+    vertical-align: top;
+    margin-left: 4%;
+  }
+
+  .navbar .navbar-collapse {
+    text-align: center;
+  }
+  #filler0,
+  #filler4,
+  #filler5 {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: medium;
+  }
+  #view,
+  #timeframes,
+  #timeframesLog,
+  #siteSelection {
+    padding-left: 0;
+    display: block;
+    margin: auto;
+    text-align: center;
+  }
+
+  #siteSelection > a {
+    text-align: center;
+  }
+  #filler0 {
+    height: 10px;
+  }
+  .navbar-toggler {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  #pnl,
+  #wellName,
+  #wellselect {
+    position: absolute;
+  }
+  #YTD {
+    position: relative;
+  }
+
+  #formation {
+    position: relative;
+    text-align: right;
+  }
+  #c,
+  #SPM,
+  #ideal,
+  #DHSL,
+  #pumpEff,
+  #pumpDepth,
+  #GFLAP,
+  #Inc {
+    display: none;
+  }
+
+  #graph {
+    height: 325px;
+  }
+  #filler4 {
+    height: 24px;
+  }
+  #filler5 {
+    height: 10px;
+  }
+
+  #navbar1 {
+    white-space: nowrap;
+  }
+  #navbar-toggler-icon,
+  #navbar-toggler,
+  .navbar-brand {
+    display: inline-block;
+  }
+  .navbar-brand {
+    margin-left: 2%;
+  }
+  .navbar-brand span {
+    display: none;
+  }
+  .navbar-brand::after {
+    content: "CML EXP - East TEXAS";
+  }
+  #zoomOil{
+    font-size: medium;
+    text-align: left;
+    padding-left: 12px;
+  }
+  #cumlativeData{
+    text-align: left;
+    font-size: medium;
+  }
+  .nav-item{
+    padding-left: 5px !important;
+  }
+}
+@media (max-width:1200px){
+  .navbar-toggler {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  
+}
+
+@media(max-width:1900px){
+    #zoomOilTitle{
+        padding-left: 0px;
+    }
+}
 
 
